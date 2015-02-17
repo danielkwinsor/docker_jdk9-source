@@ -1,6 +1,6 @@
 #Ubuntu -> jdk8-bootstrap -> jdk9-source
-#Version 0.1 20150216
-FROM danielkwinsor/jdk8-bootstrap
+#Version 0.2 20150216
+FROM dockerfile/java:oracle-java8
 MAINTAINER Daniel Winsor <danielkwinsor@gmail.com>
 
 RUN apt-get update \
@@ -20,7 +20,6 @@ RUN mkdir -p $SOURCE_CODE
 #I don't know why COPY and ADD are not working, but I tried everything
 RUN cat .bashrc > $HOME/.bashrc
 RUN chown -R openjdk:openjdk $HOME
-#RUN chown openjdk:openjdk /dev/stdout
 
 WORKDIR $SOURCE_CODE
 
