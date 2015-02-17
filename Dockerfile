@@ -18,7 +18,7 @@ ENV SOURCE_CODE $HOME/src/
 RUN mkdir -p $SOURCE_CODE
 
 #I don't know why COPY and ADD are not working, but I tried everything
-RUN cat .bashrc > $HOME/.bashrc
+RUN cat /root/.bashrc > $HOME/.bashrc
 RUN chown -R openjdk:openjdk $HOME
 
 WORKDIR $SOURCE_CODE
