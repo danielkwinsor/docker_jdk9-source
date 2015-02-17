@@ -1,12 +1,21 @@
 #Ubuntu -> jdk8-bootstrap -> jdk9-source
-#Version 0.2 20150216
+#Version 0.3 20150217
 FROM dockerfile/java:oracle-java8
 MAINTAINER Daniel Winsor <danielkwinsor@gmail.com>
 
 RUN apt-get update \
     && apt-get install -y \
         git-core \
-        mercurial
+        libasound2-dev \
+        libcups2-dev \
+        libfreetype6-dev \
+        libX11-dev \
+        libxext-dev \
+        libxrender-dev \
+        libxtst-dev \
+        libxt-dev \
+        mercurial \
+        zip
 
 RUN groupadd -r openjdk \
     && useradd -r -g openjdk openjdk
